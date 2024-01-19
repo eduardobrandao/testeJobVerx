@@ -2,6 +2,7 @@ import { Router } from "express";
 import clienteRouter from "./cliente.routes";
 
 const routes = Router();
+routes.use("/cliente", clienteRouter);
 
 routes.get("/teste", (request, response) => {
   console.log("Teste aqui !!!");

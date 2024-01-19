@@ -1,12 +1,12 @@
 import { Column, Entity, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity("clientes")
+@Entity("cliente")
 class Cliente {
   @PrimaryGeneratedColumn("increment")
-  id: number;
+  id!: number;
 
   @Column("varchar", { legthn: 100, nullable: false })
-  name: string;
+  name!: string;
 }
 
 export default Cliente;

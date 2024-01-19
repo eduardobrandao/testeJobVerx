@@ -1,11 +1,16 @@
 import "reflect-metadata";
-import express, { Request, Response } from "express";
-import routes from "./shared/routes";
-import { AppDataSource } from "./data-source";
+import express from "express";
+import routes from "./routes";
+import { AppDataSource } from "./database/data-source";
 
 const app = express();
 app.use(routes);
 
 app.use(express.json());
 
-app.listen(3333, () => console.log("Servidor rodando na porta 3333"));
+AppDataSource.initialize().then(async () => {
+  console.log("Database OK");
+  app.listen(3333, () => {
+    console.log("Server started on port 3333");
+  });
+});

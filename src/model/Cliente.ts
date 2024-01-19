@@ -1,10 +1,10 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity("clientes")
+@Entity("cliente")
 class Cliente {
   @PrimaryGeneratedColumn("increment")
-  id: number;
+  id!: number;
   @Column()
-  name: string;
+  name!: string;
 }
 export default Cliente;
